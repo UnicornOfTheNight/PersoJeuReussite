@@ -1,0 +1,9 @@
+img{
+    cursor: pointer;
+    padding: 1em;
+    height: 160px;
+}
+
+#cardsBack{
+    position: fixed;
+}

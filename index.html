@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jeu de la réussite</title>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>   
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container"> 
+        <h1 class="display-4 text-center">Jeu de la réussite</h1>
+        <h2 id="infosNbCartes" class="text-center">Nombre de cartes retournées : 0 | Nombre de cartes restantes : 52</h2>
+        
+        <div class="row">
+            <div class="col">
+                <p class="text-center">
+                    <button id="bt_regles" class="btn btn-info"  data-toggle="modal" data-target="#modalRegles">Règles</button>
+                    <button id="bt_annuler" class="btn btn-secondary">Annuler le mouvement</button>
+                    <button id="bt_refaire" class="btn btn-secondary">Refaire le mouvement</button>
+                    <button id="bt_rejouer" class="btn btn-primary">Rejouer</button>
+                    <button id="bt_aide" class="btn btn-info">Aide</button>
+                </p>             
+            </div>
+        </div>
+
+        <div class="row emplacementCartes">    
+            <div class="col-2">
+                <p>
+                    <img id="cardsBack" src="Sprites/black_back.png" alt="Play cards back">
+                </p>   
+            </div>
+            <div id="cartesSorties" class="col-10">
+            </div>
+        </div>        
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalRegles" tabindex="-1" role="dialog" aria-labelledby="Regles du jeu" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Règles du jeu</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2>But du jeu</h2>
+                <p>
+                    Le but est qu'il reste le moins de cartes possible à la fin.
+                </p>
+                <h2>Comment jouer ?</h2>
+                <p>
+                    Si une carte du jeu est entourée par deux cartes ayant le même signe ou le même nombre, il faut cliquer sur celle-ci pour qu'elle remplace celle de gauche. Il faut vérifier de gauche à droite en commencant par la première carte retournée.
+                </p>                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">J'ai compris !</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
